@@ -76,7 +76,7 @@ const CustomDatePicker = ({ setSelectedDate }) => {
           </div>
         </div>
         <div className="weekdays">{days.map((item, i) => (
-          <div key={item.type + i} className={item.type} onClick={() => pickDate(item.value)}>{item.value}</div>
+          <div key={item.type + i} className={item.type} onClick={() => pickDate(item)}>{item.value}</div>
         ))}</div>
       </div>
     );
@@ -84,9 +84,13 @@ const CustomDatePicker = ({ setSelectedDate }) => {
 
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  const pickDate = (datePicked) => {
-    setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), datePicked))
-    console.log(currentDate, "picked date")
+  const pickDate = ( item) => {
+    console.log("type of day")
+    if(!(item.type === "day")){
+      return
+    }
+    setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), item.value))
+    console.log(item, "picked date")
   }
   const previousMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
