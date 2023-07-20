@@ -1,0 +1,101 @@
+.date-picker-cal {
+    width: 100%;
+    border: 1px solid #b1b2b5;
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .header > div {
+    width: 50%;
+    color: #b1b2b5;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contols {
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contols > .MuiSvgIcon-root {
+    height: 16px;
+  }
+  
+  .month-container {
+    border-right: 1px solid #b1b2b5;
+    border-bottom: 1px solid #b1b2b5;
+  }
+  
+  .year-container {
+    border-bottom: 1px solid #b1b2b5;
+  }
+  
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .day,
+  .past-day,
+  .holiday,
+  .current-day,
+  .active {
+    padding: 5px;
+    flex-basis: calc(100% / 7);
+    text-align: center;
+  }
+  
+  .past-day,
+  .holiday {
+    color: #b1b2b5;
+  }
+  
+  .current-day {
+    border: 1px solid #b1b2b5;
+    border-radius: 50%;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  
+  .weekdays {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .weekday {
+    padding: 5px;
+    flex-basis: calc(100% / 7);
+    text-align: center;
+    font-weight: bold;
+    color: #516bce;
+    background-color: #eff2fd;
+  }
+  
+  .active {
+    background-color: #536fe9;
+    color: #eff2fd;
+    border-radius: 5px;
+  }
+  

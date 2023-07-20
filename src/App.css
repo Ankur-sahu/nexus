@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main,
+.price-and-quantity-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main > div,
+.price-and-quantity-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.price-and-quantity-container {
+  height: 100px;
+}
+
+.left-container {
+  align-items: center;
+  padding-left: 60px;
+}
+
+.right-container {
+  background-color: #f9f8f9;
+}
+
+.left-container,
+.price {
+  width: 60%;
+}
+
+.right-container,
+.quantity-container {
+  width: 40%;
+}
+
+.quantity-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.align-content-space {
+  padding: 2px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity {
+  width: 80px;
+  height: auto;
+  border: 1px solid #b1b2b5;
+  border-radius: 5px;
+}
+
+.slot-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  gap: 10px;
+}
+
+.date-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker {
+  width: 100%;
+  border: 1px solid #b1b2b5;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.time-slot {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-slot > div {
+  color: #1a4160;
+}
+
+.time-slot > div > h6 {
+  display: flex;
+  align-items: center;
+}
+
+.MuiSvgIcon-root {
+  margin-right: 2px;
+}
+
+.available-time {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.available-time > div > h6 {
+  color: #be79ef;
+}
+
+.left-footer-container {
+  width: 60%;
+  padding: 5px 100px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left-footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.submit-disabled,
+.submit-btn {
+  padding: 10px;
+  color: #f9f8f9;
+  border-radius: 5px;
+}
+
+.submit-disabled {
+  background-color: #be79ef;
+}
+
+.submit-btn {
+  background-color: rgb(207, 55, 80);
+}
+
+.cart {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-items {
+  width: 80%;
+  margin-top: 50px;
+  height: 100px;
+  padding: 0px 50px;
+  overflow-y: scroll;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-list-item {
+  color: #1a4160;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-total {
+  width: 100%;
+  text-align: center;
+  box-shadow: 1px -2px black;
 }
