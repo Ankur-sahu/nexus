@@ -11,6 +11,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useState } from 'react';
+import Tickets from './components/modals/Tickets';
 
 const Heading = styled(Typography)`
   font-size: 20px;
@@ -42,6 +43,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [selectedDate, setSelectedDate] = useState();
   const [openCalendar, setOpenCalendar] = useState(false);
+  const [tickets, setTickets] = useState(false)
 
   const addToCart = (sessionTime) => {
     setCart([...cart, { date: moment(selectedDate).format('YYYY-MM-DD'), time: sessionTime }]);
@@ -63,7 +65,10 @@ function App() {
             <SubHeading>Sales end on {moment().format('ddd, MMMM D, YYYY')}</SubHeading>
           </div>
           <div className='quantity-container'>
-            <div className='align-content-space quantity'>{cart.length}  <ExpandMoreIcon sx={{ color: '#b1b2b5' }} /></div>
+            <div className='align-content-space quantity'>{cart.length}  <ExpandMoreIcon onClick={()=>setTickets(!tickets)} sx={{ color: '#b1b2b5' }} /></div>
+            <div className='ticket-container'>
+              {tickets && <Tickets cart={cart} setCart={setCart} setTickets={setTickets} setOpenCalendar={setOpenCalendar}  setSelectedDate={setSelectedDate}/>}
+            </div>
           </div>
         </div>
         <div className='slot-container'>
